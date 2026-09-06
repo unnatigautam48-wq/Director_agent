@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Slate — an AI that directs the shot</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="rig">
+    <div class="rig-title">
+      <span class="tally" id="tally"></span>
+      <h1>SLATE</h1>
+      <span class="subtitle">an agent that watches the frame and directs it</span>
+    </div>
+    <div class="brief-field">
+      <label for="brief">Scene brief</label>
+      <input id="brief" type="text" placeholder="e.g. nervous, waiting for bad news" value="nervous, waiting for news">
+    </div>
+  </header>
+
+  <main class="stage">
+
+    <section class="monitor">
+      <video id="cam" autoplay playsinline muted></video>
+      <canvas id="overlay"></canvas>
+
+      <div class="meter-rail">
+        <div class="meter">
+          <span>Framing</span>
+          <div class="bar"><i id="bar-frame"></i></div>
+        </div>
+        <div class="meter">
+          <span>Motion</span>
+          <div class="bar"><i id="bar-motion"></i></div>
+        </div>
+        <div class="meter">
+          <span>Light</span>
+          <div class="bar"><i id="bar-light"></i></div>
+        </div>
+      </div>
+
+      <div class="controls">
+        <button id="btn-roll">Roll camera</button>
+        <label class="file-fallback">
+          or use a clip <input id="file-input" type="file" accept="video/*">
+        </label>
+        <button id="btn-cut" disabled>Call cut</button>
+      </div>
+    </section>
+
+    <aside class="log-panel">
+      <h2>Director's notes</h2>
+      <div id="log" class="log"></div>
+    </aside>
+
+  </main>
+
+  <section class="filmstrip-wrap">
+    <h2>Takes</h2>
+    <div id="filmstrip" class="filmstrip">
+      <p class="empty-note">Nothing printed yet — takes that pass will land here.</p>
+    </div>
+  </section>
+
+  <canvas id="work" style="display:none"></canvas>
+  <canvas id="thumb" style="display:none"></canvas>
+
+  <script src="app.js"></script>
+</body>
+</html>
