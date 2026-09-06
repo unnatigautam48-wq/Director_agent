@@ -1,7 +1,7 @@
 Slate
 Slate watches a camera feed and directs the shot itself — no editor, no pre-written script for what to say. It scores what it sees, decides what's wrong, says so out loud, and prints the take once the shot actually holds up.
 
-Built for [hackathon name] — Agentic Cinema track.
+Built for — Agentic Cinema track.
 
 Why this counts as agentic
 There are three decision points running in a loop, not a single generate call:
